@@ -165,7 +165,6 @@ def write_transactions_to_file(transactions, filename):
             f.write(f"Transaction ID: {transaction['transaction_id']}\n")
             f.write(f"Customer ID: {transaction['customer_id']}\n")
             f.write(f"Date: {transaction['date']}\n")
-            # You could add formatting here too if desired, e.g., f"${transaction['total_amount']:,.2f}"
             f.write(f"Total Amount: ${transaction['total_amount']:.2f}\n")
             f.write(f"Items Purchased (Unique Products): {len(transaction['items_purchased'])}\n")
             total_items_in_cart = sum(item['quantity'] for item in transaction['items_purchased'])
@@ -192,7 +191,6 @@ def calculate_and_print_metrics(transactions):
     average_asp = total_revenue / total_units_sold if total_units_sold > 0 else 0
 
     print("\n--- Aggregate Metrics ---")
-    # --- ALL OF THESE LINES ARE CHANGED ---
     print(f"Total Number of Transactions: {actual_num_transactions:,}")
     print(f"Total Number of Units Sold: {total_units_sold:,}")
     print(f"Total Revenue: ${total_revenue:,.2f}")
