@@ -160,7 +160,6 @@ def write_transactions_to_file(transactions, filename):
     """
     with open(filename, 'w') as f:
         for transaction in transactions:
-            # File writing logic remains the same...
             f.write(f"Transaction Number: {transaction['transaction_number']}\n")
             f.write(f"Transaction ID: {transaction['transaction_id']}\n")
             f.write(f"Customer ID: {transaction['customer_id']}\n")
